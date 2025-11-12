@@ -1,20 +1,20 @@
-
-定义has_duplicate(LST):
+def has_duplicate(lst):
     # 利用集合去重特性，若长度不同则存在重复元素
-返回Len(LST)!=Len(设置(LST))
+    return len(lst) != len(set(lst))
 
 # 测试用例
-test_cases=[
+test_cases = [
     [1, 2, 3, 4],       # 无重复
     [1, 2, 2, 3],       # 有重复
     [],                 # 空列表
-    [正确, 假的, 正确],# 布尔值重复
+    [True, False, True],# 布尔值重复
     ["a", "b", "a"],    # 字符串重复
     [5, 5, 5, 5],       # 全重复
     [1, "1", 2]         # 不同类型不视为重复
 ]
 
 # 调用函数并输出测试结果
-为I，大小写在……内列举(测试用例(_C)，1):
-结果=has_duplicate(案例)
-    打印(F"测试用例{我}：{案例}→{'存在重复元素' 如果结果其他 '无重复元素'}（返回值：{结果}）")
+for i, case in enumerate(test_cases, 1):
+    result = has_duplicate(case)
+    print(f"测试用例{i}：{case} → {'存在重复元素' if result else '无重复元素'}（返回值：{result}）")
+
